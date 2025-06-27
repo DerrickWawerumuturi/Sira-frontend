@@ -10,7 +10,7 @@ interface Model {
     value: string
 }
 
-API_URL = "https://huggingface.co/spaces/DerrickMuturi/sira-backend/text"
+const API_URL = "https://huggingface.co/spaces/DerrickMuturi/sira-backend/text"
 
 const ModelSelection = (model: Model) => {
     const [bot_reply, setBot_reply] = useState("")
