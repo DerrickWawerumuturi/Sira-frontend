@@ -11,7 +11,7 @@ import LoadingAnimation from '../components/LoadingAnimation'
 const model_names = ["google", "facebook", "bart"]
 const model_name = _.sample(model_names)
 
-API_URL = "https://huggingface.co/spaces/DerrickMuturi/sira-backend/text"
+const API_URL = "https://huggingface.co/spaces/DerrickMuturi/sira-backend/text"
 
 const Hero = () => {
     const [input_text, setInput_text] = useState("")
