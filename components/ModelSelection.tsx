@@ -10,12 +10,14 @@ interface Model {
     value: string
 }
 
+API_URL = "https://huggingface.co/spaces/DerrickMuturi/sira-backend/text"
+
 const ModelSelection = (model: Model) => {
     const [bot_reply, setBot_reply] = useState("")
 
     const handleClick = async (model_name: string) => {
         try {
-            const response = await axios.post("http://localhost:8000/text", {
+            const response = await axios.post(API_URL, {
                 text: model.text,
                 model_name: model_name
             }, {
