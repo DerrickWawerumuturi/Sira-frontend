@@ -11,6 +11,8 @@ import LoadingAnimation from '../components/LoadingAnimation'
 const model_names = ["google", "facebook", "bart"]
 const model_name = _.sample(model_names)
 
+API_URL = "https://huggingface.co/spaces/DerrickMuturi/sira-backend/text"
+
 const Hero = () => {
     const [input_text, setInput_text] = useState("")
     const [bot_reply, setBot_reply] = useState("")
@@ -21,7 +23,7 @@ const Hero = () => {
             setIsLoading(true)
 
             if (event.key === "Enter") {
-                axios.post("http://localhost:8000/text", {
+                axios.post(API_URL, {
                     text: input_text,
                     model_name: model_name
                 }, {
@@ -52,7 +54,7 @@ const Hero = () => {
         try {
             setIsLoading(true)
             console.log("is loading", isLoading)
-            const response = await axios.post("http://localhost:8000/text", {
+            const response = await axios.post(API_URL, {
                 text: input_text,
                 model_name: model_name
             }, {
